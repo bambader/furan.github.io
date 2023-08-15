@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LE FURAN</title>
+    <!-- Ajout de jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+     <!-- Ajouter les fichiers javascript et css -->
+     <script src="./javascript/main.js"></script>
+     <link rel="stylesheet" href="./css/style.css">
+     <link rel="stylesheet" href="./css/menu1.css">
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+
+    <!-- Le code ci-dessous est pour le plugin leaflet control geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+     <!-- Ajouter les couches geoJSON convertit en JavaScript -->
+     <script src="./data/line.js"></script>
+     <script src="./data/points.js"></script>
+     <script src="./data/polygon.js"></script>
+     <script src="./data/sites_photos.js"></script>
+     <script src="./data/vecteur/Sites.js"></script>
+     <script src="./data/vecteur/Bati.js"></script>
+     <script src="./data/vecteur/Furan_OSM.js"></script>
+     <script src="./data/vecteur/Furan_digitalisation.js"></script>
+     <script src="./data/vecteur/Furan_BD_TOPAGE.js"></script>
+     <script src="./data/vecteur/Vegetation.js"></script>
+     <script src="./data/vecteur/zone_etude.js"></script>
+
+    
+     <!-- Le code ci-dessous est pour le plugin leaflet control geocoder -->
+     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+     <!-- La source du librairie measure de leaflet-->
+     <script src="./leaflet_measure_master/src/leaflet-measure.js"></script>
+     <!-- Le code css de la librairie measure de leaflet -->
+    <link rel="stylesheet" href="./leaflet_measure_master/src/leaflet-measure.css">
+     
+
+
+     <!-- Esri Leaflet and Esri Leaflet Vector -->
+    <script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-vector@3/dist/esri-leaflet-vector.js"></script>
+
+    <!-- Ajout de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+<body onload="init()">
+    <header>  
+	
+		
+        <!-- <span style="color:brown;font-style:italic;">Header: The area defines the header Tag</span>   -->
+		<!-- <nav class="navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+		  <div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+				<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+				  <a class="nav-link active" aria-current="page" href="#">Home</a>
+				</li>
+
+				<li class="nav-item">
+				  <a class="nav-link" href="./index1.html">A Propos</a>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</nav> -->
+
+    <!-- Barre menu -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="#">LE FURAN</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="./index.html">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./index2.html">Galerie</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./index1.html">À propos</a>
+                  </li>
+                
+              </ul>
+          </div>
+      </div>
+  </nav> -->
+
+    <!-- Barre menu -->
+    
+			<nav id="menu" >
+				<div>
+				   <a href="./index.html">Accueil</a>
+           <a href="./index2.html">Galerie</a>
+				   <a href="./index1.html">À propos</a>
+				   <!-- <a href="../page1.html">Download</a> <br />  -->
+				</div>
+			</nav>
+
+
+
+    </header>  
+	
+	<div>
+	<!-- Ajout d'un bouton pour zoomer sur un endroit du map --> 
+     <button class="zoom">Zoomer sur la carte</button> 
+
+     
+	 <!-- Ajout d'un bouton pour afficher en plein ecran la carte -->
+    <!-- <button onclick=fullScreenview()> View in full screen</button>  -->
+
+	</div>
+	
+	<!-- Ajouter les coordonnees sur la carte -->
+    <div class="coordinate"></div>
+	
+	
+    <!-- Ajout de Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <div id="mapid" ></div>
+	
+	
+	 <!-- Ajout d'un bouton pour zoomer sur un endroit du map --> 
+    <!-- <button type="button" class="btn btn-dark" >Zoomer sur la carte</button> -->
+
+    
+   
+
+    <!-- <footer>  
+        <hr />  
+        <ul>  
+            <li >  
+                <a href="">About MCN </a>||  
+                <a href="">Privacy</a> ||  
+                <a href="">Contact</a> ||  
+                <a href="">Author</a> ||  
+                <a href="">Copyright</a>  
+            </li>  
+        </ul>  
+        <hr />  
+		
+		<div >
+					<img src="logo/1678698320932.png" alt="logo" title="ECLLA" class="img1">
+					<img src="logo/ENSASE.png" alt="log1" title="ENSASE class="img2" >
+					<img src="logo/LOGO LABEX_IMU.jpeg" alt="logo" title="ECLLA" class="img3">
+					<img src="LOGO_REGION_RVB-BLEU-GRIS.png" alt="logo" title="ECLLA" class="img4">
+		</div> -->
+    			
+    <!-- </footer>  
+</body>
+</html>

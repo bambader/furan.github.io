@@ -1,0 +1,43 @@
+#menu
+{
+	text-align: right; 
+	padding-right: 2em;
+	color: white;
+	font-family: Arial;
+	font-size: 1.7em;
+	word-spacing: 2em; /* Espacement entre les noms de menus */
+	background-color: #003262;
+}
+
+/* Créer des apparences dynamiques */
+
+a /* apparence par défaut des liens */
+{
+	text-decoration: none;
+	color: white;
+	word-spacing: 1px; /* Espacement entre les mots dans le groupe de mot */
+	font-size: 0.7em;
+	font-style: italic;
+}
+
+
+/* a:hover /*apparence lorsque les liens sont survolés */
+/* { */
+	/* text-decoration: none; */
+	/* color: none ; */
+	/* font-style: italic; */
+/* }  */
+/* a:active affiche une couleur lorsqu'on clique sur le lien */
+/* { */
+	/* background-color: blue ; */
+/* } */
+
+/* a:focus une foi le lien sélétionné , il reste actif et acive le syle */
+/* { */
+	/* background-color: blue ; */
+/* } */
+
+/* a:visited quand le visiteur a déja consulté le lien */
+/* { */
+	/* color: blanchedalmond ; */
+/* } */

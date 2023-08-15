@@ -1,0 +1,26 @@
+/* Style pour l'en-tête */
+header {
+    background-color: #333; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    text-align: center; /* Alignement du texte */
+  }
+  
+  /* Style pour le menu de navigation */
+  nav {
+    background-color: #444; /* Couleur de fond */
+    display: flex; /* Affichage en ligne des éléments */
+    justify-content: center; /* Centrage horizontal */
+  }
+  
+  nav a {
+    color: #fff; /* Couleur du texte */
+    text-decoration: none; /* Pas de soulignement */
+    padding: 10px 20px; /* Espacement intérieur */
+    transition: background-color 0.3s; /* Transition en douceur */
+  }
+  
+  nav a:hover {
+    background-color: #555; /* Couleur de fond au survol */
+  }
+  
